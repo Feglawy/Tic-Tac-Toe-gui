@@ -1,9 +1,11 @@
 using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Security.AccessControl;
 using System.Windows.Forms;
+using System.Windows.Forms.Layout;
 
-namespace WinFormsApp1
+namespace XO_GUT_APP
 {
     public partial class Form1 : Form
     {

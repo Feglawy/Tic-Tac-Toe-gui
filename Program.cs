@@ -1,4 +1,4 @@
-namespace WinFormsApp1
+namespace XO_GUT_APP
 {
     internal static class Program
     {
