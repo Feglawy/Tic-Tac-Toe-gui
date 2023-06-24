@@ -19,6 +19,7 @@ namespace WinFormsApp1
 
         private void Button_Click(object sender, EventArgs e)
         {
+
             List<Button> buttonList = new List<Button>() {
                 button1,
                 button2,
@@ -51,9 +52,6 @@ namespace WinFormsApp1
 
             if (change)
             {
-                turn++;
-                count++;
-
                 string winner = Utilities.Check(buttonList);
                 if (winner == "X")
                 {
@@ -71,27 +69,29 @@ namespace WinFormsApp1
                 }
                 if (winner == "X" || winner == "O" || count == 9)
                 {
-
-                    turn = -1;
+                    turn = 1;
                     count = 0;
                     Utilities.Change_Turn(Turn_box, turn, Play_again_button);
                     Utilities.Reset_Tic_Tac_toe(this);
                 }
+                turn++;
+                count++;
             }
         }
 
 
         private void Play_again_button_Click(object sender, EventArgs e)
         {
-            turn = -1;
+            turn = 1;
             count = 0;
             Utilities.Change_Turn(Turn_box, turn, Play_again_button);
+            turn = 0;
             Utilities.Reset_Tic_Tac_toe(this);
         }
 
         private void Reset_button_Click(object sender, EventArgs e)
         {
-            turn = -1;
+            turn = 1;
             count = 0;
             player1_wins = 0;
             player2_wins = 0;
@@ -99,6 +99,7 @@ namespace WinFormsApp1
             Player1_score.Text = "0";
             Player2_score.Text = "0";
             Utilities.Change_Turn(Turn_box, turn, Reset_button);
+            turn = 0;
         }
     }
 }

@@ -81,7 +81,6 @@ namespace WinFormsApp1
         /// <returns></returns>
         public static bool Input(Button button, int turn)
         {
-            turn++;
             if (button.Text == "" || button.Text == null)
             {
                 if (turn % 2 == 1)
@@ -137,7 +136,7 @@ namespace WinFormsApp1
                 Change_Color(board[2, 2]);
                 return board[0, 0].Text;
             }
-            else if (board[2, 0] == board[1, 1] && board[1, 1] == board[0, 2] && board[2, 0].Text != "")
+            else if (board[2, 0].Text == board[1, 1].Text && board[1, 1].Text == board[0, 2].Text && board[2, 0].Text != "")
             {
                 Change_Color(board[2, 0]);
                 Change_Color(board[1, 1]);
@@ -162,8 +161,7 @@ namespace WinFormsApp1
         {
             if (button.Text != "O" && button.Text != "X")
             {
-                turn++;
-                if (turn % 2 == 1)
+                if (turn % 2 == 0)
                 {
                     textbox.Text = "Player Two (O)";
                 }
@@ -191,7 +189,10 @@ namespace WinFormsApp1
         }
 
 
-
+        /// <summary>
+        /// changes the button color to green and the font to white when there is a winner
+        /// </summary>
+        /// <param name="button"> the button that meant to change its color </param>
         private static void Change_Color(Button button)
         {
             // Change the button's background color to red.
@@ -200,6 +201,11 @@ namespace WinFormsApp1
             // Change the button's text color to white.
             button.ForeColor = Color.White;
         }
+
+        /// <summary>
+        /// restors the button color to white and the font to black when resets
+        /// </summary>
+        /// <param name="button"> the button that meant to change its color </param>
         private static void Chang_To_Defult_Color(Button button)
         {
             // Change the button's background color to red.

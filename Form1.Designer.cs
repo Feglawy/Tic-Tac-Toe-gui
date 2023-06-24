@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             button1 = new Button();
             button2 = new Button();
@@ -46,6 +47,7 @@
             Turn_box = new TextBox();
             Reset_button = new Button();
             Play_again_button = new Button();
+            Cooldown_Timer = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // button1
@@ -131,6 +133,7 @@
             // 
             // Player1_score
             // 
+            Player1_score.BackColor = Color.White;
             Player1_score.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             Player1_score.Location = new Point(337, 117);
             Player1_score.Multiline = true;
@@ -142,6 +145,7 @@
             // 
             // Player2_score
             // 
+            Player2_score.BackColor = Color.White;
             Player2_score.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             Player2_score.Location = new Point(491, 117);
             Player2_score.Multiline = true;
@@ -211,6 +215,10 @@
             Play_again_button.UseVisualStyleBackColor = true;
             Play_again_button.Click += Play_again_button_Click;
             // 
+            // Cooldown_Timer
+            // 
+            Cooldown_Timer.Interval = 1000;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -261,5 +269,6 @@
         private TextBox Turn_box;
         private Button Reset_button;
         private Button Play_again_button;
+        private System.Windows.Forms.Timer Cooldown_Timer;
     }
 }
