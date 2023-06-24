@@ -141,6 +141,7 @@
             Player1_score.ReadOnly = true;
             Player1_score.Size = new Size(89, 49);
             Player1_score.TabIndex = 9;
+            Player1_score.Text = "0";
             Player1_score.TextAlign = HorizontalAlignment.Center;
             // 
             // Player2_score
@@ -153,6 +154,7 @@
             Player2_score.ReadOnly = true;
             Player2_score.Size = new Size(89, 49);
             Player2_score.TabIndex = 10;
+            Player2_score.Text = "0";
             Player2_score.TextAlign = HorizontalAlignment.Center;
             // 
             // Player1_label

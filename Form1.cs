@@ -18,7 +18,6 @@ namespace XO_GUT_APP
         private int count = 0;
         private int player1_wins = 0;
         private int player2_wins = 0;
-        private int Cooldown = 2;
 
         private void Button_Click(object sender, EventArgs e)
         {
@@ -70,7 +69,7 @@ namespace XO_GUT_APP
                 else if (count == 9)
                 {
                     MessageBox.Show("Tie");
-                    
+
                 }
                 if (winner == "X" || winner == "O" || count == 9)
                 {
