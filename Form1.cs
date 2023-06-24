@@ -1,5 +1,6 @@
 using System.Collections.Specialized;
 using System.Linq.Expressions;
+using System.Security.AccessControl;
 using System.Windows.Forms;
 
 namespace WinFormsApp1
@@ -15,11 +16,10 @@ namespace WinFormsApp1
         private int count = 0;
         private int player1_wins = 0;
         private int player2_wins = 0;
-
+        private int Cooldown = 2;
 
         private void Button_Click(object sender, EventArgs e)
         {
-
             List<Button> buttonList = new List<Button>() {
                 button1,
                 button2,
@@ -57,15 +57,18 @@ namespace WinFormsApp1
                 {
                     player1_wins++;
                     Player1_score.Text = Convert.ToString(player1_wins);
+                    MessageBox.Show($"Player1 {winner} wins", "Game Over");
                 }
                 else if (winner == "O")
                 {
                     player2_wins++;
                     Player2_score.Text = Convert.ToString(player2_wins);
+                    MessageBox.Show($"Player2 {winner} wins", "Game Over");
                 }
                 else if (count == 9)
                 {
                     MessageBox.Show("Tie");
+                    
                 }
                 if (winner == "X" || winner == "O" || count == 9)
                 {
