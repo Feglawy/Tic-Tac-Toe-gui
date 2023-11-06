@@ -53,6 +53,7 @@ namespace XO_GUT_APP
 
             if (change)
             {
+                count++;
                 string winner = Utilities.Check(buttonList);
                 if (winner == "X")
                 {
@@ -79,7 +80,6 @@ namespace XO_GUT_APP
                     Utilities.Reset_Tic_Tac_toe(this);
                 }
                 turn++;
-                count++;
             }
         }
 
